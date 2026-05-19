@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberCart Checkout</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <div class="checkout-container">
+        <header>
+            <div class="logo">Cyber<span>Cart</span></div>
+            <p>Secure Event-Driven Checkout</p>
+        </header>
+
+        <main>
+            <div class="cart-summary">
+                <h3>Order Summary</h3>
+                <div class="item">
+                    <div class="item-info">
+                        <span class="item-name">Quantum Neural Processor X1</span>
+                        <span class="item-id">QTY: 1</span>
+                    </div>
+                    <span class="item-price">$450.75</span>
+                </div>
+                
+                <div class="total-row">
+                    <span>Total</span>
+                    <span class="total-price">$450.75</span>
+                </div>
+            </div>
+
+            <form id="checkout-form">
+                <div class="input-group">
+                    <label for="userId">User ID</label>
+                    <input type="text" id="userId" value="Jacob-Xubuntu-99">
+                </div>
+                
+                <button type="submit" id="checkout-btn">
+                    <span class="btn-text">Confirm & Pay</span>
+                    <div class="loader"></div>
+                </button>
+            </form>
+
+            <div id="status-message" class="hidden"></div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

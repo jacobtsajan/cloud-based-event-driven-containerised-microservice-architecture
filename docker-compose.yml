@@ -1,0 +1,31 @@
+services:
+  floci:
+    image: floci/floci:latest
+    container_name: floci
+    ports:
+      - "4566:4566"
+      - "4571:4571"
+    environment:
+      - FLOCI_BASE_URL=http://localhost:4566
+    volumes:
+      - ./floci_data:/app/data
+
+  user-service:
+    build: .
+    container_name: user_service
+    command: python -u user_service.py
+    ports:
+      - "5000:5000"
+    environment:
+      - AWS_ENDPOINT_URL=http://floci:4566
+    depends_on:
+      - floci
+
+  order-service:
+    build: .
+    container_name: order_service
+    command: python -u order_service.py
+    environment:
+      - AWS_ENDPOINT_URL=http://floci:4566
+    depends_on:
+      - floci
